@@ -10,6 +10,7 @@ phases:
   pre_build:
     commands:
       - echo Pulling WAR file from S3...
+      - sudo yum install awscli -y
       - aws s3 cp s3://alblogtestsagar/01-maven-web-app.war /opt
 
   build:
