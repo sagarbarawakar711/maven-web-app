@@ -1,0 +1,27 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      java: openjdk11
+    commands:
+      # Install dependencies if needed (like wget, curl, etc.)
+      - echo Installing dependencies...
+      - yum install -y wget
+
+  pre_build:
+    commands:
+      - echo Pulling WAR file from S3...
+      - aws s3 cp s3://alblogtestsagar/01-maven-web-app.war /01-maven-web-app.war
+
+  build:
+    commands:
+      - echo Starting server deployment...
+      # Example of running a command to deploy the WAR (assuming Tomcat or similar server)
+      - mkdir -p /opt/tomcat/webapps/
+      - cp /01-maven-web-app.war /opt/tomcat/webapps/
+      - echo WAR file copied to Tomcat webapps folder.
+
+  post_build:
+    commands:
+      - echo Build and deployment complete.
