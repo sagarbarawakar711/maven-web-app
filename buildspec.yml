@@ -16,6 +16,7 @@ phases:
   build:
     commands:
       - echo Starting server deployment...
+      - mvn clean install
       # Example of running a command to deploy the WAR (assuming Tomcat or similar server)
       - mkdir -p /opt/tomcat/webapps/
       - cp /opt/*.war /opt/tomcat/webapps/
