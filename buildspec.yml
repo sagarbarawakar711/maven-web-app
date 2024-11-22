@@ -13,10 +13,6 @@ phases:
       - sudo yum install awscli -y
       - aws s3 cp s3://alblogtestsagar/01-maven-web-app.war /opt
 
-  build:
-    commands:
-      - echo WAR file copied to Tomcat webapps folder.
-
   post_build:
     commands:
       - echo Build and deployment complete.
