@@ -10,14 +10,14 @@ phases:
   pre_build:
     commands:
       - echo Pulling WAR file from S3...
-      - aws s3 cp s3://alblogtestsagar/01-maven-web-app.war /01-maven-web-app.war
+      - aws s3 cp s3://alblogtestsagar/01-maven-web-app.war /
 
   build:
     commands:
       - echo Starting server deployment...
       # Example of running a command to deploy the WAR (assuming Tomcat or similar server)
       - mkdir -p /opt/tomcat/webapps/
-      - cp /01-maven-web-app.war /opt/tomcat/webapps/
+      - cp /*war /opt/tomcat/webapps/
       - echo WAR file copied to Tomcat webapps folder.
 
   post_build:
