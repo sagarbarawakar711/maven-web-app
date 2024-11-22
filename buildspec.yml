@@ -12,7 +12,9 @@ phases:
       - echo Pulling WAR file from S3...
       - sudo yum install awscli -y
       - aws s3 cp s3://alblogtestsagar/01-maven-web-app.war /opt
-
+  build:
+    commands:
+      - mvn clean install
   post_build:
     commands:
       - echo Build and deployment complete.
