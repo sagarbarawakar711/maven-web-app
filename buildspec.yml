@@ -2,8 +2,6 @@ version: 0.2
 
 phases:
   install:
-    runtime-versions:
-      java: openjdk11
     commands:
       # Install dependencies if needed (like wget, curl, etc.)
       - echo Installing dependencies...
